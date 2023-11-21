@@ -20,14 +20,11 @@ Benchee.run(
   memory_time: 1,
   inputs: inputs,
   formatters: [
-    {Benchee.Formatters.Console, extended_statistics: true},
-    # {Benchee.Formatters.HTML,
-    #  file: "benchmarks/output/tco_focussed_detailed_inputs.html", auto_open: false}
+    {Benchee.Formatters.Console, extended_statistics: true}
   ],
   # load and save double loads and double saves used like this, write to one file and adjust the README
   # `parallel_benchmark_evaluation: false`
-  save: [tag: tag, path: "benchmarks/saves/tco.benchee"],
-  load: "benchmarks/saves/tco.benchee"
+  save: [tag: tag, path: "benchmarks/saves/tco_#{tag}.benchee"]
 )
 
 # tobi@speedy:~/github/elixir_playground(master)$ mix run bench/tco_blog_post_focussed_inputs.exs

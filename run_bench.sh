@@ -50,3 +50,6 @@ mix deps.clean --all
 mix deps.get
 
 TAG="1.16-26" mix run benchmarks/tco_blog_post_focussed_inputs.exs
+
+# And generate the report
+mix run benchmarks/report.exs
