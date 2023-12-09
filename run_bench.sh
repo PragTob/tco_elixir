@@ -20,7 +20,7 @@ mix deps.get
 TAG="1.6-21" mix run benchmarks/tco_blog_post_focussed_inputs.exs
 
 
-# most modern pre jit (OTP 24)
+# most modern pre jit (OTP 24 introduced the jit)
 # For OTP building: https://github.com/asdf-vm/asdf-erlang/issues/257#issuecomment-1699023329
 asdf local elixir 1.14.5-otp-23
 asdf local erlang 23.3.4.19
