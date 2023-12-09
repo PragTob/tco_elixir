@@ -15,9 +15,10 @@ Benchee.run(
     "body" => fn list -> MyMap.map_body(list, map_fun) end,
     "tail +order" => fn list -> MyMap.map_tco_arg_order(list, map_fun) end
   },
-  warmup: 1,
-  time: 1,
-  memory_time: 1,
+  warmup: 2,
+  time: 10,
+  # memory measurements are stable/all the same
+  memory_time: 0.1,
   inputs: inputs,
   formatters: [
     {Benchee.Formatters.Console, extended_statistics: true}
