@@ -4,7 +4,7 @@ set -e
 set -x
 
 # clean up potentially old benchee saves
-rm -f benchmarks/saves/bench-*.benchee
+rm -f benchmarks/saves/tco_*.benchee
 
 # yes yes, this should/could be a loop but I'm lazy!
 # Elixir compatibility
