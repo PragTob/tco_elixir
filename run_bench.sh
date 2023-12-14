@@ -4,7 +4,7 @@ set -e
 set -x
 
 # clean up potentially old benchee saves
-rm -f benchmarks/saves/tco_*.benchee
+# rm -f benchmarks/saves/tco_*.benchee
 
 # yes yes, this should/could be a loop but I'm lazy!
 # Elixir compatibility
@@ -42,7 +42,7 @@ mix deps.get
 TAG="1.14-24" mix run benchmarks/tco_blog_post_focussed_inputs.exs
 
 # Bleeding edge
-asdf local elixir 1.16.0-rc.0-otp-26
+asdf local elixir 1.16.0-rc.1-otp-26
 asdf local erlang 26.1.2
 
 mix local.hex --force
