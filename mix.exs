@@ -22,7 +22,7 @@ defmodule TcoElixir.MixProject do
   defp deps do
     [
       {:benchee, "~> 1.2", path: "../benchee", override: true},
-      {:benchee_html, "~> 1.0"}
+      {:benchee_html, "~> 1.0", path: "../benchee_html", override: true}
     ]
   end
 end
