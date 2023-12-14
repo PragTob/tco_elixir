@@ -25,7 +25,7 @@ Benchee.run(
   ],
   # load and save double loads and double saves used like this, write to one file and adjust the README
   # `parallel_benchmark_evaluation: false`
-  save: [tag: tag, path: "benchmarks/saves/tco_#{tag}.benchee"]
+  save: [tag: tag, path: "benchmarks/saves_new/tco_#{tag}.benchee"]
 )
 
 # tobi@speedy:~/github/elixir_playground(master)$ mix run bench/tco_blog_post_focussed_inputs.exs

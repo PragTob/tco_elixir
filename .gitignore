@@ -28,3 +28,4 @@ tco_elixir-*.tar
 # benchee generated files
 /benchmarks/output
 /benchmarks/saves
+/benchmarks/saves_new
