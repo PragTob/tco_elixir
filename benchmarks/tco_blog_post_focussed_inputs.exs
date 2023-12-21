@@ -15,8 +15,8 @@ Benchee.run(
     "body" => fn list -> MyMap.map_body(list, map_fun) end,
     "tail +order" => fn list -> MyMap.map_tco_arg_order(list, map_fun) end
   },
-  warmup: 2,
-  time: 10,
+  warmup: 5,
+  time: 40,
   # memory measurements are stable/all the same
   memory_time: 0.1,
   inputs: inputs,
@@ -25,7 +25,7 @@ Benchee.run(
   ],
   # load and save double loads and double saves used like this, write to one file and adjust the README
   # `parallel_benchmark_evaluation: false`
-  save: [tag: tag, path: "benchmarks/saves_new/tco_#{tag}.benchee"]
+  save: [tag: tag, path: "benchmarks/saves_old_benchee/tco_#{tag}.benchee"]
 )
 
 # tobi@speedy:~/github/elixir_playground(master)$ mix run bench/tco_blog_post_focussed_inputs.exs

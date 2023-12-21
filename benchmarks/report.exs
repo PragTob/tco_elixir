@@ -1,5 +1,5 @@
 Benchee.report(
-  load: ["benchmarks/saves/tco_*.benchee"],
+  load: ["benchmarks/saves_old_benchee/tco_*.benchee"],
   formatters: [
     # {Benchee.Formatters.Console, extended_statistics: true},
     {Benchee.Formatters.HTML,
