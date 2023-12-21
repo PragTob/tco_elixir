@@ -1,55 +1,34 @@
 #!/usr/bin/env bash
 
 set -e
-set -x
-
-# clean up potentially old benchee saves
-# rm -f benchmarks/saves/tco_*.benchee
-
-# yes yes, this should/could be a loop but I'm lazy!
-# Elixir compatibility
 
 # oldest elixir/otp I can get running easily
-asdf local elixir 1.6.6-otp-21
-asdf local erlang 21.3.8.24
+# pre JIT introduction, 1.13 to avoid elixir bag from 1.14 till 1.16.0-rc.0
+# * For OTP building: https://github.com/asdf-vm/asdf-erlang/issues/257#issuecomment-1699023329
+# post JIT introduction (OTP 24)
+# Most current versions at time of writing
+versions=("1.6.6-otp-21@21.3.8.24" "1.13.4-otp-23@23.3.4.19" "1.13.4-otp-24@24.3.4.14" "1.16.0-rc.1-otp-26@26.2.1")
 
-mix local.hex --force
-mix deps.clean --all
-mix deps.get
+# Iterate over the array
+for version in "${versions[@]}"; do
+    # Split the version into two parts
+    IFS='@' read -r elixir erlang <<< "$version"
 
-TAG="1.6-21" mix run benchmarks/tco_blog_post_focussed_inputs.exs
+    echo
+    echo "---------------$elixir-------------------"
+    echo
 
+    asdf local elixir $elixir
+    asdf local erlang $erlang
 
-# most modern pre jit (OTP 24 introduced the jit)
-# For OTP building: https://github.com/asdf-vm/asdf-erlang/issues/257#issuecomment-1699023329
-asdf local elixir 1.14.5-otp-23
-asdf local erlang 23.3.4.19
+    mix local.hex --force
+    # recompile cos different erlang
+    mix deps.clean --all
+    mix deps.get
+    mix compile
 
-mix local.hex --force
-mix deps.clean --all
-mix deps.get
-
-TAG="1.14-23" mix run benchmarks/tco_blog_post_focussed_inputs.exs
-
-# JIT introduction
-asdf local elixir 1.14.5-otp-24
-asdf local erlang 24.3.4.14
-
-mix local.hex --force
-mix deps.clean --all
-mix deps.get
-
-TAG="1.14-24" mix run benchmarks/tco_blog_post_focussed_inputs.exs
-
-# Bleeding edge
-asdf local elixir 1.16.0-rc.1-otp-26
-asdf local erlang 26.1.2
-
-mix local.hex --force
-mix deps.clean --all
-mix deps.get
-
-TAG="1.16-26" mix run benchmarks/tco_blog_post_focussed_inputs.exs
+    TAG="$elixir" /usr/bin/time -v mix run benchmarks/tco_blog_post_focussed_inputs.exs
+done
 
 # And generate the report
-mix run benchmarks/report.exs
+/usr/bin/time -v mix run benchmarks/report.exs
