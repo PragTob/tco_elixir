@@ -23,8 +23,6 @@ Benchee.run(
   formatters: [
     {Benchee.Formatters.Console, extended_statistics: true}
   ],
-  # load and save double loads and double saves used like this, write to one file and adjust the README
-  # `parallel_benchmark_evaluation: false`
   save: [tag: tag, path: "benchmarks/saves_old_benchee/tco_#{tag}.benchee"]
 )
 
