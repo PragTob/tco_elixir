@@ -23,7 +23,7 @@ Benchee.run(
   formatters: [
     {Benchee.Formatters.Console, extended_statistics: true}
   ],
-  save: [tag: tag, path: "benchmarks/saves_old_benchee/tco_#{tag}.benchee"]
+  save: [tag: tag, path: "benchmarks/saves/tco_#{tag}.benchee"]
 )
 
 # tobi@speedy:~/github/elixir_playground(master)$ mix run bench/tco_blog_post_focussed_inputs.exs

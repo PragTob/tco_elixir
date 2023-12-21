@@ -21,7 +21,7 @@ defmodule TcoElixir.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:benchee, "~> 1.2", github: "bencheeorg/benchee", ref: "1a3e37a324070a989559a38a03a384cd46ee69fb",override: true},
+      {:benchee, "~> 1.2", github: "bencheeorg/benchee", override: true},
       {:benchee_html, "~> 1.0", github: "bencheeorg/benchee_html", override: true}
     ]
   end

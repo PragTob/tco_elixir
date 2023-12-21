@@ -1,5 +1,5 @@
 %{
-  "benchee": {:git, "https://github.com/bencheeorg/benchee.git", "1a3e37a324070a989559a38a03a384cd46ee69fb", [ref: "1a3e37a324070a989559a38a03a384cd46ee69fb"]},
+  "benchee": {:git, "https://github.com/bencheeorg/benchee.git", "15bb1c9b7e17d1ab8e81ccb879424ff689817e1f", []},
   "benchee_html": {:git, "https://github.com/bencheeorg/benchee_html.git", "7b74093159e2a9c043db4fe2f0962dfa63d713ac", []},
   "benchee_json": {:hex, :benchee_json, "1.0.0", "cc661f4454d5995c08fe10dd1f2f72f229c8f0fb1c96f6b327a8c8fc96a91fe5", [:mix], [{:benchee, ">= 0.99.0 and < 2.0.0", [hex: :benchee, repo: "hexpm", optional: false]}, {:jason, "~> 1.0", [hex: :jason, repo: "hexpm", optional: false]}], "hexpm", "da05d813f9123505f870344d68fb7c86a4f0f9074df7d7b7e2bb011a63ec231c"},
   "deep_merge": {:hex, :deep_merge, "1.0.0", "b4aa1a0d1acac393bdf38b2291af38cb1d4a52806cf7a4906f718e1feb5ee961", [:mix], [], "hexpm", "ce708e5f094b9cd4e8f2be4f00d2f4250c4095be93f8cd6d018c753894885430"},
