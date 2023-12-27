@@ -11,7 +11,7 @@ versions=("1.6.6-otp-21@21.3.8.24" "1.13.4-otp-23@23.3.4.19" "1.13.4-otp-24@24.3
 
 # Iterate over the array
 for version in "${versions[@]}"; do
-    # Split the version into two parts
+    # Split the version into two parts at the @
     IFS='@' read -r elixir erlang <<< "$version"
 
     echo
