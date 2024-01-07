@@ -4,7 +4,8 @@ inputs = [
   {"Small (10 Thousand)", Enum.to_list(1..10_000)},
   {"Middle (100 Thousand)", Enum.to_list(1..100_000)},
   {"Big (1 Million)", Enum.to_list(1..1_000_000)},
-  {"Giant (10 Million)", Enum.to_list(1..10_000_000)}
+  {"Giant (10 Million)", Enum.to_list(1..10_000_000)},
+  {"Titanic (50 Million)", Enum.to_list(1..50_000_000)}
 ]
 
 tag = System.get_env("TAG")
