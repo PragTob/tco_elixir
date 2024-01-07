@@ -2,6 +2,8 @@
 
 set -e
 
+rm -r benchmarks/output/saves/
+
 # oldest elixir/otp I can get running easily
 # pre JIT introduction, 1.13 to avoid elixir bag from 1.14 till 1.16.0-rc.0
 # * For OTP building: https://github.com/asdf-vm/asdf-erlang/issues/257#issuecomment-1699023329
