@@ -2,7 +2,7 @@
 
 set -e
 
-rm -r benchmarks/output/saves/
+rm -r benchmarks/saves/
 
 # oldest elixir/otp I can get running easily
 # pre JIT introduction, 1.13 to avoid elixir bag from 1.14 till 1.16.0-rc.0
